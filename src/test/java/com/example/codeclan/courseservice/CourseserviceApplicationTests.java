@@ -43,6 +43,14 @@ class CourseserviceApplicationTests {
 		List<Booking> foundBookings = bookingRepository.findByDate("01-01-2020");
 	}
 
+	@Test
+	public void canGetCustomersInATownForACourse(){
+		List<Customer> foundCustomers = customerRepository.findByTownAndBookingsCourseName("Edinburgh", "Beginners Ju Jitsu");
+	}
 
+	@Test
+	public void canGetCustomersByAgeTOwnAndCourse(){
+		List<Customer> foundCustomers = customerRepository.findByAgeGreaterThanAndTownAndBookingsCourseName(46, "Edinburgh", "Beginners Ju Jitsu");
+	}
 
 }
