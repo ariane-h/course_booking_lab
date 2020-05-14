@@ -15,13 +15,13 @@ public class Booking {
     @Column
     private String date;
 
-    @JsonBackReference
-    @JoinColumn(name = "course_id", nullable = false)
+//    @JsonBackReference
+    @JoinColumn(name = "course_id", nullable = true)
     @ManyToOne
     private Course course;
 
-    @JsonBackReference
-    @JoinColumn(name = "customer_id", nullable = false)
+//    @JsonBackReference
+    @JoinColumn(name = "customer_id", nullable = true)
     @ManyToOne
     private Customer customer;
 
